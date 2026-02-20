@@ -45,8 +45,8 @@ export default function EventsPage() {
 
   const handleRSVP = async (eventId: string) => {
     try {
-      const { data: session } = await supabase.auth.getSession();
-      if (!session?.user) return;
+      const { data } = await supabase.auth.getSession();
+      if (!data?.session?.user) return;
 
       const event = events.find((e) => e.id === eventId);
       if (!event) return;
