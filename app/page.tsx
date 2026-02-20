@@ -1,8 +1,8 @@
 'use client';
 import Link from "next/link";
 import { MapPin, Users, MessageCircle, Calendar, Home as HomeIcon, Zap } from "lucide-react";
-export default function Home() {
-  return (
+
+export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
