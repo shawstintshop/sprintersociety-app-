@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
-import { Mail, Lock, User, Van } from "lucide-react";
+import { Mail, Lock, User, Truck } from "lucide-react"
 
 export default function SignUp() {
   const router = useRouter();
@@ -110,7 +110,7 @@ export default function SignUp() {
 
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
-                <Van className="w-4 h-4 inline mr-2" />
+                <Truck className="w-4 h-4 inline mr-2" />
                 Van Type
               </label>
               <select
