@@ -48,12 +48,10 @@ export default function PostsPage() {
     try {
       const { data, error } = await supabase
         .from("posts")
-        .select(
-          `
+        .select(`
           *,
           user:user_id (full_name, avatar_url)
-        `
-        )
+        `)
         .order("created_at", { ascending: false })
         .limit(20);
 
@@ -72,12 +70,12 @@ export default function PostsPage() {
 
     setPosting(true);
     try {
-      const { data: session } = await supabase.auth.getSession();
-      if (!session?.user) return;
+      const { data } = await supabase.auth.getSession();
+      if (!data?.session?.user) return;
 
       const { error } = await supabase.from("posts").insert([
         {
-          user_id: session.user.id,
+          user_id: data.session.user.id,
           content: newPost,
         },
       ]);
