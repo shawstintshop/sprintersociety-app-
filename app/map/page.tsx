@@ -46,8 +46,7 @@ export default function MapPage() {
       try {
         const { data, error: fetchError } = await supabase
           .from("gps_shares")
-          .select(
-            `
+          .select(`
             user_id,
             location,
             timestamp,
@@ -57,8 +56,7 @@ export default function MapPage() {
               van_type,
               avatar_url
             )
-          `
-          )
+          `)
           .order("timestamp", { ascending: false })
           .limit(50);
 
@@ -125,11 +123,11 @@ export default function MapPage() {
 
         // Share GPS location every 60 seconds
         try {
-          const { data: session } = await supabase.auth.getSession();
-          if (session?.user) {
+          const { data } = await supabase.auth.getSession();
+          if (data?.session?.user) {
             await supabase.from("gps_shares").insert([
               {
-                user_id: session.user.id,
+                user_id: data.session.user.id,
                 location: `POINT(${longitude} ${latitude})`,
                 location_name: `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`,
                 timestamp: new Date().toISOString(),
@@ -145,7 +143,7 @@ export default function MapPage() {
       },
       {
         enableHighAccuracy: true,
-        maximumAge: 60000, // 60 seconds
+        maximumAge: 60000,
         timeout: 5000,
       }
     );
@@ -159,7 +157,7 @@ export default function MapPage() {
     setTracking(false);
   };
 
-  const defaultCenter: [number, number] = [47.6062, -122.3321]; // Seattle
+  const defaultCenter: [number, number] = [47.6062, -122.3321];
 
   return (
     <div className="min-h-screen pt-20 pb-8">
@@ -210,7 +208,7 @@ export default function MapPage() {
           <div className="bg-card border border-border rounded-lg p-4">
             <div className="text-sm text-muted-foreground">Status</div>
             <div className={`text-sm font-semibold ${tracking ? "text-green-400" : "text-muted-foreground"}`}>
-              {tracking ? "🟢 Live" : "⚪ Offline"}
+              {tracking ? "Live" : "Offline"}
             </div>
           </div>
         </div>
@@ -228,7 +226,6 @@ export default function MapPage() {
                 attribution='&copy; OpenStreetMap contributors'
               />
 
-              {/* Your location */}
               {location && (
                 <Marker position={[location.latitude, location.longitude]}>
                   <Popup>
@@ -242,7 +239,6 @@ export default function MapPage() {
                 </Marker>
               )}
 
-              {/* Member locations */}
               {members.map((member) => (
                 <Marker
                   key={member.id}
@@ -266,7 +262,6 @@ export default function MapPage() {
           </div>
         )}
 
-        {/* Members List */}
         <div className="mt-8">
           <h2 className="text-2xl font-display font-bold text-foreground mb-4">
             <Users className="w-6 h-6 inline mr-2" />
