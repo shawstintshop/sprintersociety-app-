@@ -1,8 +1,6 @@
 'use client';
-
 import Link from "next/link";
-import { MapPin, Users, MessageCircle, Calendar, Home, Zap } from "lucide-react";
-
+import { MapPin, Users, MessageCircle, Calendar, Home as HomeIcon, Zap } from "lucide-react";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
