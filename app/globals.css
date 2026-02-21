@@ -1,24 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @import "tailwindcss";
-@config "../tailwind.config.ts";
 
-:root {
-  --background: 232 59% 10%;
-  --foreground: 0 0% 96%;
-  --card: 229 16% 20%;
-  --card-foreground: 0 0% 96%;
-  --primary: 207 100% 27%;
-  --primary-foreground: 0 0% 96%;
-  --secondary: 229 16% 25%;
-  --secondary-foreground: 0 0% 96%;
-  --accent: 16 100% 60%;
-  --accent-foreground: 0 0% 100%;
-  --muted: 229 16% 20%;
-  --muted-foreground: 0 0% 64%;
-  --border: 229 16% 22%;
-  --input: 229 16% 22%;
-  --ring: 16 100% 60%;
+@source "../components";
+
+@theme {
+  /* Semantic colors */
+  --color-background: #0a0e27;
+  --color-foreground: #f5f5f5;
+  --color-card: #2a2d3a;
+  --color-card-foreground: #f5f5f5;
+  --color-primary: #004e89;
+  --color-primary-foreground: #f5f5f5;
+  --color-secondary: #353849;
+  --color-secondary-foreground: #f5f5f5;
+  --color-accent: #ff6b35;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #2a2d3a;
+  --color-muted-foreground: #a3a3a3;
+  --color-border: #2e3145;
+  --color-input: #2e3145;
+  --color-ring: #ff6b35;
+
+  /* Brand colors */
+  --color-van-black: #0a0e27;
+  --color-van-white: #f5f5f5;
+  --color-seattle-gray: #2a2d3a;
+  --color-seattle-accent: #ff6b35;
+  --color-seattle-teal: #004e89;
+  --color-seattle-sage: #6a994e;
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Animations */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 * {
@@ -32,19 +62,19 @@ html {
 }
 
 body {
-  background-color: #0a0e27;
-  color: #f5f5f5;
-  font-family: "Source Sans 3", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-weight: 700;
 }
 
 code, pre {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 ::-webkit-scrollbar {
@@ -53,14 +83,14 @@ code, pre {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0e27;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2d3a;
+  background: var(--color-seattle-gray);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff6b35;
+  background: var(--color-accent);
 }
