@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --background: 232 59% 10%;
+  --foreground: 0 0% 96%;
+  --card: 229 16% 20%;
+  --card-foreground: 0 0% 96%;
+  --primary: 207 100% 27%;
+  --primary-foreground: 0 0% 96%;
+  --secondary: 229 16% 25%;
+  --secondary-foreground: 0 0% 96%;
+  --accent: 16 100% 60%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 229 16% 20%;
+  --muted-foreground: 0 0% 64%;
+  --border: 229 16% 22%;
+  --input: 229 16% 22%;
+  --ring: 16 100% 60%;
+}
 
 * {
   margin: 0;

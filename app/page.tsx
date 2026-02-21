@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Users, MessageCircle, Calendar, Home as HomeIcon, Zap } from "lucide-react";
 
 export default function HomePage() {
+  return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
@@ -50,7 +51,7 @@ export default function HomePage() {
             { icon: MapPin, title: "Live Map", desc: "See verified members in real-time." },
             { icon: MessageCircle, title: "Connect", desc: "Message nearby van owners." },
             { icon: Calendar, title: "Events", desc: "Oil Change Saturdays & meetups." },
-            { icon: Home, title: "Hosting", desc: "Stay at member properties." },
+            { icon: HomeIcon, title: "Hosting", desc: "Stay at member properties." },
             { icon: Users, title: "Community", desc: "Forums and feeds." },
             { icon: Zap, title: "AI-Powered", desc: "Smart recommendations." },
           ].map((feature, i) => (
