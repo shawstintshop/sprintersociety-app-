@@ -6,6 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#3B82F6">
+    <meta name="description" content="AI-powered research hub for Winnebago Revel, Mercedes Sprinter van life resources, electrical upgrades, and community intelligence.">
     <title>AI Revel Research Hub</title>
     
     <link rel="manifest" href="manifest.json">
@@ -470,7 +471,7 @@
                     </div>
                     
                     <div class="ai-status">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-circle-check"></i>
                         AI Agents Online - Monitoring 500+ sources globally
                     </div>
 
@@ -478,7 +479,7 @@
                         <div class="agent-card">
                             <div class="agent-header">
                                 <div class="agent-name">
-                                    <i class="fas fa-rv"></i> Revel Specialist
+                                    <i class="fas fa-caravan"></i> Revel Specialist
                                 </div>
                                 <div class="agent-status status-active">Active</div>
                             </div>
@@ -543,7 +544,7 @@
                         <div class="agent-card">
                             <div class="agent-header">
                                 <div class="agent-name">
-                                    <i class="fas fa-shield-alt"></i> Safety Monitor
+                                    <i class="fas fa-shield-halved"></i> Safety Monitor
                                 </div>
                                 <div class="agent-status status-active">Active</div>
                             </div>
@@ -556,7 +557,7 @@
 
                     <div class="control-buttons">
                         <button class="btn" onclick="runAIScan()">
-                            <i class="fas fa-search"></i> Run AI Scan
+                            <i class="fas fa-magnifying-glass"></i> Run AI Scan
                         </button>
                         <button class="btn" onclick="sendReport()">
                             <i class="fas fa-paper-plane"></i> Send Report
@@ -748,7 +749,7 @@
                             <span class="content-date">${formatTimeAgo(resource.dateFound)}</span>
                         </div>
                         <div class="content-title">
-                            <a href="${resource.url}" target="_blank" rel="noopener">${resource.title}</a>
+                            <a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a>
                         </div>
                         <div class="content-description">${resource.description}</div>
                         <div class="content-tags">
