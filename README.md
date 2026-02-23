@@ -71,7 +71,18 @@ TL;DR:
 ```bash
 npm run dev
 ```
+# Vanciety — Sprinter Van Community
 
+## Tech
+- Next.js (App Router)
+- Supabase (Auth + Postgres)
+- (Optional) pgvector for embeddings
+
+## Quick Start
+
+### 1) Install dependencies
+```bash
+pnpm install
 Open [http://localhost:3000](http://localhost:3000)
 
 ## Environment Variables
