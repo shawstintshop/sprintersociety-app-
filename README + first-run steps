@@ -1,0 +1,12 @@
+# Vanciety — Sprinter Van Community
+
+## Tech
+- Next.js (App Router)
+- Supabase (Auth + Postgres)
+- (Optional) pgvector for embeddings
+
+## Quick Start
+
+### 1) Install dependencies
+```bash
+pnpm install
