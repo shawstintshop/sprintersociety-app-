@@ -1,4 +1,4 @@
-# Sprinter Society v2
+# Vanciety.com
 
 A next-generation van life community platform built with **Next.js 15 App Router**, **Supabase** (PostGIS + pgvector), **Leaflet** realtime GPS, and **AI-powered** features.
 
